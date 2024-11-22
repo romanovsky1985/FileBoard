@@ -1,0 +1,15 @@
+server:
+  port: 3113
+
+spring:
+  application:
+    name: FileBoard
+  datasource:
+    url: "jdbc:h2:mem:FileBoard"
+    username: admin
+    password: qwerty
+  jpa:
+    show-sql: true
+
+h2:
+  console: enabled
