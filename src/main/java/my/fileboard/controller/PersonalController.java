@@ -61,4 +61,11 @@ public class PersonalController {
         return "redirect:/personal/files";
     }
 
+    @GetMapping(path = "/personal/share")
+    public String switchAccess(@RequestParam("id") Long id) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        fileService.switchPersonalAccess(username, id);
+        return "redirect:/personal/files";
+    }
+
 }

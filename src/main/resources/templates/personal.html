@@ -20,10 +20,11 @@
     <table>
         <tr th:each="file : ${files}">
             <td th:text="${file.name}"></td>
-            <td>12 Kb</td>
+            <td th:text="${file.info}"></td>
             <td th:text="${file.owner}"></td>
             <td><a th:href="@{'/personal/download?name=' + ${file.name} + '&id=' + ${file.id}}">download</a></td>
             <td><a th:href="@{'/personal/delete?id=' + ${file.id}}">delete</a></td>
+            <td><a th:href="@{'/personal/share?id=' + ${file.id}}" th:text="${file.shared} ? 'close' : 'share'"></a></td>
         </tr>
     </table>
 </body>

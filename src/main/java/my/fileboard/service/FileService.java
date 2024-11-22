@@ -60,6 +60,12 @@ public class FileService {
     }
 
     @Transactional
+    public void switchPersonalAccess(String owner, Long id) {
+        FileEntity entity = getPersonalEntity(owner, id);
+        entity.setShared(!entity.getShared());
+    }
+
+    @Transactional
     public void deletePersonalFile(String owner, Long id) {
         FileEntity entity = getPersonalEntity(owner, id);
         entityManager.remove(entity);
@@ -72,6 +78,7 @@ public class FileService {
         entity.setOwner(owner);
         entity.setData(data);
         entity.setShared(true);
+        entity.setInfo(String.format("%d Kb", data.length / 1000 + 1));
         entityManager.persist(entity);
     }
 

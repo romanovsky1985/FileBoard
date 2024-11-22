@@ -4,6 +4,8 @@ public class FileDTO {
     private Long id;
     private String name;
     private String owner;
+    private Boolean shared;
+    private String info;
 
 
     public String getName() {
@@ -28,5 +30,21 @@ public class FileDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Boolean getShared() {
+        return shared;
+    }
+
+    public void setShared(Boolean shared) {
+        this.shared = shared;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

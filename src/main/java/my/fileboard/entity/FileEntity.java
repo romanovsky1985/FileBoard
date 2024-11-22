@@ -22,6 +22,8 @@ public class FileEntity {
     @Basic(fetch = FetchType.LAZY)
     private byte[] data;
 
+    private String info;
+
     public Long getId() {
         return id;
     }
@@ -60,5 +62,13 @@ public class FileEntity {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }
